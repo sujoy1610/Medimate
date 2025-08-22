@@ -8,14 +8,14 @@ const Login = () => {
     const [state, setState] = useState('admin')
     const[email,setEmail]= useState('')
     const[password,setPassword]= useState('')
-    const{setAToken,backendUrl} = useContext(AdminContext)
+    const{setAToken,backendURL} = useContext(AdminContext)
 
 const onSubmitHandler = async(event)=>{
     event.preventDefault()
 
     try {
         if (state==='admin') {
-            const {data}= await axios.post(backendUrl + '/api/admin/login',{email,password})
+            const {data}= await axios.post(backendURL + '/api/admin/login',{email,password})
             if(data.success){
                 localStorage.setItem('aToken',data.token)
                 setAToken(data.token)

@@ -4,7 +4,7 @@ export const DoctorContext = createContext()
 
 const DoctorContextProvider = (props)=>{
     const value ={
-
+     
     }
 
     return(
